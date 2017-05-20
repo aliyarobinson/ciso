@@ -49,6 +49,7 @@ svg {
 }
 
 .logo,
+ g,
 .c,
 .i,
 .s {
@@ -63,7 +64,8 @@ svg {
   	animation: dash 20s linear forwards;
 }
 
-.letter-fill {
+.letter-fill,
+.logo-fill {
 	fill: #badbad;
 	opacity: 0;
 }
@@ -87,8 +89,8 @@ svg {
 }
 
 .logo-fill {
-  	fill: #badbad;
-  	opacity: 0;
+  	/*fill: #badbad;
+  	opacity: 0;*/
   	animation: filling 2s linear forwards;
   	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 	animation-delay: 3s;
