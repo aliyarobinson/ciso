@@ -1,0 +1,107 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background: wheat;
+}
+
+.background-imgs > * {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-imgs .map {
+	background-image: url(../img/AdobeStock_69891500.jpeg);
+}
+
+.background-imgs .color {
+	background-color: dimgray;
+	opacity: 0.9;
+}
+
+
+.site-header {
+	height: 100%;
+    max-height: 3500px;
+    position: relative;
+    transition: 500ms;
+    
+    
+}
+
+.site-header.small {
+    max-height: 150px;
+}
+
+svg {
+	width: 100%;
+	height: 70%;
+	margin: 0 auto;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 80%;
+}
+
+.logo,
+.c,
+.i,
+.s {
+	stroke: #badbad;
+	stroke-width: 1px;
+  	fill: none;
+
+	stroke-dasharray: 9000;
+  	stroke-dashoffset: 9000;
+  	webkit-animation: dash 20s linear forwards;
+  	ms-animation: dash 20s linear forwards;
+  	animation: dash 20s linear forwards;
+}
+
+.letter-fill {
+	fill: #badbad;
+	opacity: 0;
+}
+
+.c-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay: 400ms; /* Safari 4.0 - 8.0 */
+	animation-delay: 1.5s;
+}
+
+.i-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay: 400ms; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+}
+
+.s-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay: 400ms; /* Safari 4.0 - 8.0 */
+	animation-delay: 2.5s;
+}
+
+.logo-fill {
+  	fill: #badbad;
+  	opacity: 0;
+  	animation: filling 2s linear forwards;
+  	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 3s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes filling {
+  to {
+    opacity: 1;
+  }
+}
