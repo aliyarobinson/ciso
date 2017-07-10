@@ -4,7 +4,8 @@ html, body {
 
 body {
 	font: 16px 'raleway', arial, sans-serif;
-    color: #3f3c38;
+  /*color: #3f3c38;*/
+  color: #607d8b;
 	background: #000;
 }
 
@@ -81,46 +82,67 @@ img {
   height:auto; 
 }
 
-/*.background-imgs,*/
 svg {
-    /*width: 100%;*/
-    height: 100%;
-    position: absolute;
-    transition: 1s;
-    max-height: 3500px;
-    transform: translateX(-50%);
-    left: 50%;
+  height: 100%;
+  position: absolute;
+  transition: 1s;
+  max-height: 3500px;
+  transform: translateX(-50%);
+  left: 50%;
+  fill-opacity: 0.4;
 }
 
-.background-imgs > * {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.intro .title {
+  position: fixed;
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
 }
 
-.background-imgs .map {
-	background-image: url(../img/AdobeStock_69891500.jpeg);
-	opacity: 0;
-	/*transition: 400ms;*/
-	webkit-animation: filling 2s linear forwards;
-	ms-animation: filling 2s linear forwards;
-	animation: filling 2s linear forwards;
-
-  -webkit-animation-delay: 100ms; /* Safari 4.0 - 8.0 */
-	animation-delay: 100ms;
+.intro .title * {
+  opacity: 0;
+  left: -40px;
+  position: relative;
 }
 
-.background-imgs .color {
-	background-color: dimgray;
-	opacity: 0.4;
+
+.intro .title .word1 {
+  animation: fadein-title-item 1200ms .4s ease-out forwards;
+}
+
+.intro .title .word2 {
+  animation: fadein-title-item 1000ms .6s ease-out forwards;
+}
+
+.intro .title .word3 {
+  animation: fadein-title-item 800ms .8s ease-out forwards;
+}
+
+
+@-ms-keyframes fadein-title-item {
+  0%   { opacity: 0; left: -40px; }
+  100% { opacity: 1; left: 0; } 
+}
+@-mos-keyframes fadein-title-item {
+  0%   { opacity: 0; left: -40px; }
+  100% { opacity: 1; left: 0; }  
+}
+@-webkit-keyframes fadein-title-item {
+  0%   { opacity: 0; left: -40px; }
+  100% { opacity: 1; left: 0; }   
+}
+@keyframes fadein-title-item {
+  0%   { opacity: 0; left: -40px; }
+  100% { opacity: 1; left: 0; }   
 }
 
 svg circle {
   fill: #badbad;
-  r: 0.3;
+  r: 0.5;
   stroke-width: 0;
 }
 
