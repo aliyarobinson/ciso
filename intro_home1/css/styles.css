@@ -1,0 +1,244 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 16px 'raleway', arial, sans-serif;
+    color: #3f3c38;
+	background: #000;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 97.23%;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+a:focus, button:focus, .focus {
+  outline: transparent solid 1px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+.legal{
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 1px;
+  width: 100%;
+  max-width: 200px;
+  font-family: 'DISCO', arial;
+  clear: both;
+  padding: 20px 0 0;
+}
+
+.hide-copy {
+  text-indent: -9999999px;
+  display: block;
+  height: 0;
+}
+
+#svg-defs, .cache {
+  max-height: 0;
+  opacity: 0;
+}
+
+#skip a { 
+  position:absolute; 
+  left:-10000px; 
+  top:auto; 
+  width:1px; 
+  height:1px; 
+  overflow:hidden;
+} 
+ 
+#skip a:focus { 
+  position:static; 
+  width:auto; 
+  height:auto; 
+}
+
+/*.background-imgs,*/
+svg {
+    /*width: 100%;*/
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+    max-height: 3500px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.background-imgs > * {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-imgs .map {
+	background-image: url(../img/AdobeStock_69891500.jpeg);
+	opacity: 0;
+	/*transition: 400ms;*/
+	webkit-animation: filling 2s linear forwards;
+	ms-animation: filling 2s linear forwards;
+	animation: filling 2s linear forwards;
+
+  -webkit-animation-delay: 100ms; /* Safari 4.0 - 8.0 */
+	animation-delay: 100ms;
+}
+
+.background-imgs .color {
+	background-color: dimgray;
+	opacity: 0.4;
+}
+
+svg circle {
+  fill: #badbad;
+  r: 0.3;
+  stroke-width: 0;
+}
+
+.site-header {
+	height: 100%;
+    max-height: 3500px;
+    position: relative;
+    transition: 500ms;
+}
+
+.site-header .wrapper {
+	height: 100%;
+}
+
+.site-header .intro a {
+	pointer-events: none;
+}
+
+.intro-logo {
+    width: initial;
+    height: 70%;
+    margin: 0 auto;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.logo,
+ g,
+.c,
+.i,
+.s {
+	stroke: #badbad;
+	stroke-width: 1px;
+  	fill: none;
+
+	stroke-dasharray: 9000;
+  	stroke-dashoffset: 9000;
+  	webkit-animation: dash 20s linear forwards;
+  	ms-animation: dash 20s linear forwards;
+  	animation: dash 20s linear forwards;
+}
+
+.letter-fill,
+.logo-fill {
+	fill: #badbad;
+	opacity: 0;
+}
+
+.c-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay: 1.5s; /* Safari 4.0 - 8.0 */
+	animation-delay: 1.5s;
+}
+
+.i-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+}
+
+.s-fill {
+  	animation: filling 1.8s linear forwards;
+	-webkit-animation-delay:  2.5s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2.5s;
+}
+
+.logo-fill {
+  	/*fill: #badbad;
+  	opacity: 0;*/
+  	animation: filling 2s linear forwards;
+  	-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+	animation-delay: 2s;
+}
+
+.enter {
+	position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #badbad;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes filling {
+  to {
+    opacity: 1;
+  }
+}
+
+.site-header.small {
+    max-height: 150px;
+}
+
+.site-header.small .intro-logo {
+	transform: none;
+    top: 20px;
+    left: 20px;
+}
+
+.site-header.small .enter {
+	color: transparent;
+	pointer-events: none;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+.site-header.small .intro a {
+	pointer-events: auto;
+}
+
+.background-imgs.small{
+	max-height: 150px;
+}
