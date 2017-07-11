@@ -3,10 +3,10 @@ html, body {
 }
 
 body {
-	font: 16px 'raleway', arial, sans-serif;
+	font: 16px 'muli', arial, sans-serif;
   /*color: #3f3c38;*/
   color: #607d8b;
-	background: #000;
+	background: #464646;
 }
 
 *,
@@ -94,7 +94,7 @@ svg {
 
 .intro .title {
   position: fixed;
-  font-size: 40px;
+  /*font-size: 40px;*/
   color: #fff;
   text-align: center;
   top: 50%;
@@ -105,12 +105,25 @@ svg {
 
 .intro .title * {
   opacity: 0;
-  left: -40px;
-  position: relative;
+  font: 30px 'Playfair Display', serif;
+  /*left: -40px;*/
+  /*position: relative;*/
+}
+
+.intro .title .word1 {
+  animation: fadeInDown 1200ms .4s ease-out forwards;
+}
+
+.intro .title .word2 {
+  animation: fadeInDown 1000ms .6s ease-out forwards;
+}
+
+.intro .title .word3 {
+  animation: fadeInDown 800ms .8s ease-out forwards;
 }
 
 
-.intro .title .word1 {
+/*.intro .title .word1 {
   animation: fadein-title-item 1200ms .4s ease-out forwards;
 }
 
@@ -120,8 +133,12 @@ svg {
 
 .intro .title .word3 {
   animation: fadein-title-item 800ms .8s ease-out forwards;
-}
+}*/
 
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
 
 @-ms-keyframes fadein-title-item {
   0%   { opacity: 0; left: -40px; }
@@ -138,6 +155,18 @@ svg {
 @keyframes fadein-title-item {
   0%   { opacity: 0; left: -40px; }
   100% { opacity: 1; left: 0; }   
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 svg circle {
@@ -178,13 +207,13 @@ svg circle {
 .s {
 	stroke: #badbad;
 	stroke-width: 1px;
-  	fill: none;
+  fill: #badbad;
 
 	stroke-dasharray: 9000;
-  	stroke-dashoffset: 9000;
-  	webkit-animation: dash 20s linear forwards;
-  	ms-animation: dash 20s linear forwards;
-  	animation: dash 20s linear forwards;
+	stroke-dashoffset: 9000;
+	webkit-animation: dash 20s linear forwards;
+	ms-animation: dash 20s linear forwards;
+	animation: dash 20s linear forwards;
 }
 
 .letter-fill,
