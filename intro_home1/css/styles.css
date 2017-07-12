@@ -105,7 +105,6 @@ svg {
 
 .intro .title {
   position: fixed;
-  /*font-size: 40px;*/
   color: #fff;
   text-align: center;
   top: 50%;
@@ -114,58 +113,21 @@ svg {
   width: 100%;
 }
 
-.intro .title * {
-  opacity: 0;
-  font: 30px 'Playfair Display', serif;
-  /*left: -40px;*/
-  /*position: relative;*/
-}
-
-.intro .title .word1 {
+.intro #word1 {
   animation: fadeInDown 1200ms .4s ease-out forwards;
 }
 
-.intro .title .word2 {
-  animation: fadeInDown 1000ms .6s ease-out forwards;
+.intro #word2 {
+  animation: fadeInDown 1000ms .8s ease-out forwards;
 }
 
-.intro .title .word3 {
-  animation: fadeInDown 800ms .8s ease-out forwards;
+.intro #word3 {
+  animation: fadeInDown 800ms 1.2s ease-out forwards;
 }
-
-
-/*.intro .title .word1 {
-  animation: fadein-title-item 1200ms .4s ease-out forwards;
-}
-
-.intro .title .word2 {
-  animation: fadein-title-item 1000ms .6s ease-out forwards;
-}
-
-.intro .title .word3 {
-  animation: fadein-title-item 800ms .8s ease-out forwards;
-}*/
 
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
-}
-
-@-ms-keyframes fadein-title-item {
-  0%   { opacity: 0; left: -40px; }
-  100% { opacity: 1; left: 0; } 
-}
-@-mos-keyframes fadein-title-item {
-  0%   { opacity: 0; left: -40px; }
-  100% { opacity: 1; left: 0; }  
-}
-@-webkit-keyframes fadein-title-item {
-  0%   { opacity: 0; left: -40px; }
-  100% { opacity: 1; left: 0; }   
-}
-@keyframes fadein-title-item {
-  0%   { opacity: 0; left: -40px; }
-  100% { opacity: 1; left: 0; }   
 }
 
 @keyframes fadeInDown {
@@ -217,20 +179,7 @@ svg circle {
     left: 50%;
 }
 
-.logo,
- g,
-.c,
-.i,
-.s     { 
-  stroke: #badbad;
-  stroke-width: 1px;
-  fill: #badbad;
-  stroke-dasharray: 9000;
-  stroke-dashoffset: 9000;
-  webkit-animation: dash 20s linear forwards;
-  ms-animation: dash 20s linear forwards;
-  animation: dash 20s linear forwards;
-  /* max-height: 500px; */
+.logo { 
   width: 100%;
   position: absolute;
   z-index: 10;
@@ -239,6 +188,27 @@ svg circle {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+}
+
+
+#logo-icon { 
+  stroke: #badbad;
+  stroke-width: 1px;
+  fill: #badbad;
+  stroke-dasharray: 9000;
+  stroke-dashoffset: 9000;
+  webkit-animation: dash 20s linear forwards;
+  ms-animation: dash 20s linear forwards;
+  animation: dash 20s linear forwards;
+}
+
+#full-title { 
+  fill: #badbad;
+}
+
+#full-title > * {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
 }
 
 .letter-fill,
