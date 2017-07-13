@@ -4,7 +4,9 @@ var CISO = CISO || {};
 
 (function($){
   var siteHeader = $('.site-header');
-  var bkgdImgs = $('.background-imgs');
+  var bkgdImgs = $('.background-img');
+  var mainContent = $('.site-content');
+  var siteFooter = $('.site-footer');
 
   CISO = { 
     clickHandler: ('ontouchstart' in document.documentElement ? "touchstart" : "click"),
@@ -16,9 +18,10 @@ var CISO = CISO || {};
       /*   Navigation link click
       /***************************************************/
       $(document).on( CISO.clickHandler , '.enter', function(e) {
-        console.log('small'); 
         siteHeader.addClass('small');
-        bkgdImgs.addClass('small');
+        bkgdImgs.delay(1500).addClass('small');
+        mainContent.css('display','block').addClass('show');
+        siteFooter.css('display','block');
       });
 
 

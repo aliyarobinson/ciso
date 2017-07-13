@@ -4,7 +4,7 @@ var CISO = CISO || {};
 
 (function($){
   var siteHeader = $('.site-header');
-  var bkgdImgs = $('.background-imgs');
+  var bkgdImgs = $('.background-img');
 
   CISO = { 
     clickHandler: ('ontouchstart' in document.documentElement ? "touchstart" : "click"),
@@ -17,8 +17,10 @@ var CISO = CISO || {};
       /***************************************************/
       $(document).on( CISO.clickHandler , '.enter', function(e) {
         console.log('small'); 
+        console.log('bkgdImgs: ', bkgdImgs); 
         siteHeader.addClass('small');
         bkgdImgs.addClass('small');
+        bkgdImgs.find('.img').eq(1).fadeOut(800).addClass('faded');
       });
 
 
