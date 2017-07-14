@@ -6,7 +6,8 @@ body {
 	font: 16px 'muli', arial, sans-serif;
   /*color: #3f3c38;*/
   color: #464646;
-	background: #464646;
+  /*background: #464646;*/
+	background: #fff;
 }
 
 *,
@@ -148,9 +149,9 @@ svg circle {
 
 .site-header {
 	height: 100%;
-    max-height: 3500px;
-    position: relative;
-    transition: 2000ms;
+  max-height: 3500px;
+  position: relative;
+  transition: 2000ms;
 }
 
 .site-header .wrapper {
@@ -240,11 +241,14 @@ svg circle {
 
 .enter {
 	position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    color: #badbad;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  color: #badbad;
+  border: none;
+  outline-color: transparent;
+  z-index: 10;
 }
 
 @keyframes dash {
@@ -299,9 +303,11 @@ svg circle {
 }
 
 .site-header.small svg{
-  transform: initial;
+  /*transform: initial;*/
+  transform: translateX(0%);
   width: auto;
-  left: 0;
+  /*left: 0;*/
+  left: initial;
   fill-opacity: 1;
 }
 
@@ -339,7 +345,8 @@ svg circle {
 .site-content.show {
   opacity: 1;
   pointer-events: auto;
-  height: auto;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
   top: 0;
 }
 
@@ -354,6 +361,7 @@ svg circle {
 
 .site-content .cta-block {
   padding: 30px 0 0;
+  text-align: center;
 }
 
 .site-content .cta-btn {
@@ -361,7 +369,7 @@ svg circle {
   max-width: 270px;
   border: 1px #badbad solid;
   height: 70px;
-  float: left;
+  display: inline-block;
   font-weight: 600;
   position: relative;
   margin: 0 0 0 40px;
@@ -403,32 +411,47 @@ svg circle {
   color: #464646;
 }
 
-.site-footer {
-  position: relative;
-  display: none;
-  clear: both;
-  margin: 60px 0 0;
-}
-
-
-
-.footer-logo {
+.site-content .content-logo {
   width: 100%;
   position: relative;
   height: 50px;
-  max-width: 100px;
+  max-width: 60px;
   opacity: 0.5;
   margin: 0 auto 30px;
+  top: 120px;
 }
 
-.footer-logo img {
+.site-content .content-logo img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
 }
 
-.site-footer .footer-block {
+
+
+
+
+
+
+/*.news-feed .news-item {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.news-feed .news-item:before {
+  content: ".";
+  position: relative;
+  top: -5px;
+  font-size: 20px;
+}*/
+
+
+.site-footer {
+  position: relative;
+  display: none;
+  clear: both;
+  margin: 60px 0 0;
   background: #464646;
   color: #fff;
   padding: 40px 0;

@@ -14,6 +14,8 @@ var CISO = CISO || {};
     init: function () {
       console.log('init');
 
+      // $("ul.news-feed").liScroll();
+
       /**************************************/
       /*   Navigation link click
       /***************************************************/
