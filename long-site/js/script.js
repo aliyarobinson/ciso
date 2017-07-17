@@ -30,8 +30,11 @@ var CISO = CISO || {};
       /**************************************/
       /*   Site Nav button animation on click
       /***************************************************/
-      $('.site-nav-btn').on( CISO.clickHandler , function(){
-
+      $('.site-nav a').on( CISO.clickHandler , function(e){
+        e.preventDefault();
+        var thisElem = $(this).attr('href');
+        console.log('thisElem: ', thisElem);
+        CISO.scrollTo(thisElem, 150);
       }); 
 
       $( window ).scroll(function() {
@@ -46,10 +49,11 @@ var CISO = CISO || {};
       });
     },
 
-    scrollTo: function(elem, topOffset) {
+    scrollTo: function(elem) {
+
       console.log('************** scrollTop fired *****************');
       $('html,body').animate({
-          scrollTop: $(elem).offset().top  + topOffset
+          scrollTop: $(elem).offset().top
       }, 1000);
     }
   };
