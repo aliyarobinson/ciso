@@ -84,7 +84,7 @@ var CISO = CISO || {};
       function scrollTo(id, opts) {
 
         var nav = $('.site-nav > ul'),
-            navOffset = 80,
+            navOffset = 150,
             targetOffset,
             defaults = {
               addedOffset: 0,
