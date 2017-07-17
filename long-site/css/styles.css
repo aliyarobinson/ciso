@@ -218,25 +218,25 @@ svg circle {
 .c-fill {
   	animation: filling 1.8s linear forwards;
 	-webkit-animation-delay: 1.5s; 
-	animation-delay: 1.5s;
+	animation-delay: 2.5s;
 }
 
 .i-fill {
   	animation: filling 1.8s linear forwards;
 	-webkit-animation-delay: 2s; 
-	animation-delay: 2s;
+	animation-delay: 3.5s;
 }
 
 .s-fill {
   	animation: filling 1.8s linear forwards;
 	-webkit-animation-delay:  2.5s; 
-	animation-delay: 2.5s;
+	animation-delay: 4.5s;
 }
 
 .logo-fill {
   	animation: filling 2s linear forwards;
   	-webkit-animation-delay: 2s; 
-	animation-delay: 2s;
+	animation-delay: 5.5s;
 }
 
 .enter {
@@ -251,33 +251,45 @@ svg circle {
   z-index: 10;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
+
+
+
+.site-nav {
+  position: absolute;
+  right: -50px;
+  opacity: 0;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  transition: 500ms;
+  -webkit-transition-delay: 2s;
 }
 
-@keyframes filling {
-  to {
-    opacity: 1;
-  }
+.site-nav li {
+  float: left;
+  padding: 0 0 0 24px;
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
+.site-nav a,
+.site-nav a:first-child {
+  color: #fff;
+  transition: 500ms;
 }
+
+.site-nav a:hover {
+  color: #badbad;
+}
+
 
 .site-header.small {
     max-height: 150px;
     background: #464646;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
 }
 
 .site-header.small .intro-logo {
@@ -325,6 +337,12 @@ svg circle {
   height: 70%;
 }
 
+.site-header.small .site-nav {
+  right: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 
 
@@ -333,48 +351,70 @@ svg circle {
 
 .site-content {
   position: relative;
-  opacity: 0;
+  /*opacity: 0;
   pointer-events: none;
   height: 0;
-  top: 100px;
+  top: 100px;*/
   transition: 1000ms;
   transition-delay: 1500ms;
-  display: none;
+  top: 150px;
+  /*display: none;*/
 }
 
-.site-content.show {
+.site-content .section {
+  padding: 30px 0;
+}
+
+.site-content .section-title {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+/*.site-content.show {
   opacity: 1;
   pointer-events: auto;
   height: 100%;
   background: rgba(255, 255, 255, 0.8);
   top: 0;
+}*/
+
+.site-content .about {
+  background: rgba(255,255,255, 0.7);
 }
 
-.site-content .wrapper {
-  padding: 50px 0 60px;
-}
-
-.site-content .intro-copy p {
+.site-content .about p {
   padding: 10px 0;
 }
 
 
-.site-content .cta-block {
-  padding: 30px 0 0;
+.site-content .cta-line {
+  padding: 30px 0;
   text-align: center;
+  background: #badbad;
+}
+
+.site-content .cta-block {
+  width: 49%;
+  display: inline-block;
+  border: 1px solid #767676;
+  border-style: none none none solid;
+  padding: 0 2%;
+}
+
+.site-content .cta-block:first-child {
+  border-style: none;
 }
 
 .site-content .cta-btn {
   width: 100%;
-  max-width: 270px;
   border: 1px #badbad solid;
   height: 70px;
   display: inline-block;
-  font-weight: 600;
+  font-size: 26px;
   position: relative;
   margin: 0 0 0 40px;
   transition: 600ms;
-  background: #fff;
+  color: #fff;
 }
 
 .site-content .cta-btn:first-child {
@@ -386,24 +426,26 @@ svg circle {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 100%;
 }
 
 .site-content .cta-btn .small-copy  {
-  font-size: 12px;
+  font-size: 16px;
   font-style: italic;
   font-weight: 100;
   line-height: 10px;
+  display: block;
+  padding: 5px 0 0;
+  line-height: 18px;
 }
 
 .site-content .cta-btn.secondary  {
-  background: #badbad;
-  color: #fff;
+  background: #767676;
 }
 
 .site-content .cta-btn:hover  {
   background: #badbad;
-  color: #fff;
+  color: #767676;
 }
 
 .site-content .cta-btn.secondary:hover  {
@@ -411,24 +453,19 @@ svg circle {
   color: #464646;
 }
 
-.site-content .content-logo {
-  width: 100%;
-  position: relative;
-  height: 50px;
-  max-width: 60px;
-  opacity: 0.5;
-  margin: 0 auto 30px;
-  top: 120px;
+.site-content .list-block {
+  width: 33%;
+  float: left;
+  padding: 0 2%;
 }
 
-.site-content .content-logo img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+.site-content .list-block:first-of-type {
+  padding-left: 0;
 }
 
-
+.site-content .list-block:last-child {
+  padding-right: 0;
+}
 
 
 
@@ -449,7 +486,7 @@ svg circle {
 
 .site-footer {
   position: relative;
-  display: none;
+  /*display: none;*/
   clear: both;
   margin: 60px 0 0;
   background: #464646;
@@ -467,4 +504,28 @@ svg circle {
   margin: 0;
   max-width: 200px;
   fill: #fff;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes filling {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
