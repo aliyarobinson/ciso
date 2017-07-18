@@ -148,23 +148,36 @@ svg circle {
 }
 
 .site-header {
-	height: 100%;
-  max-height: 3500px;
-  position: relative;
-  transition: 2000ms;
+	height: 150px;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  background: #464646;
+  z-index: 200;
+  opacity: 0;
+  transition: 1s;
 }
 
 .site-header .wrapper {
 	height: 100%;
 }
 
-.site-header .intro {
+.site-header h1 {
+  width: 150px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.intro {
   width: 100%;
   height: 100%;
   position: relative;
+  transition: 1s;
 }
 
-.site-header .intro a {
+.intro a {
 	pointer-events: none;
 }
 
@@ -187,7 +200,6 @@ svg circle {
   top: 50%;
   transform: translate(-50%,-50%);
 }
-
 
 #logo-icon { 
   stroke: #badbad;
@@ -244,11 +256,13 @@ svg circle {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  font-size: 30px;
+  /*font-size: 30px;*/
   color: #badbad;
   border: none;
   outline-color: transparent;
   z-index: 10;
+  font: 30px 'Playfair Display', 'Times New Roman', serif;
+  transition: 800ms;
 }
 
 
@@ -256,9 +270,7 @@ svg circle {
 
 .site-nav {
   position: absolute;
-  right: -50px;
-  opacity: 0;
-  pointer-events: none;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
@@ -282,14 +294,9 @@ svg circle {
 }
 
 
-.site-header.small {
-    max-height: 150px;
-    background: #464646;
-    position: fixed;
-    top: 0;
+.site-header.reveal {
     left: 0;
-    width: 100%;
-    z-index: 200;
+    opacity: 1;
 }
 
 .site-header.small .intro-logo {
@@ -314,34 +321,32 @@ svg circle {
   -webkit-transition-delay: 1200ms;
 }
 
-.site-header.small svg{
-  /*transform: initial;*/
-  transform: translateX(0%);
-  width: auto;
-  /*left: 0;*/
-  left: initial;
-  fill-opacity: 1;
+.intro.remove {
+  height: 0;
+  opacity: 0;
 }
 
-.site-header.small #full-title {
+
+
+/*.intro.remove #full-title {
   position: absolute;
   transform: translateX(9%);
   fill: #fff;
 }
 
-.site-header.small #logo-icon {
+.intro.remove #logo-icon {
   fill: #fff;
 }
 
-.site-header.small .logo {
+.intro.remove .logo {
   height: 70%;
-}
+}*/
 
-.site-header.small .site-nav {
+/*.site-header.reveal .site-nav {
   right: 0;
   opacity: 1;
   pointer-events: auto;
-}
+}*/
 
 
 
@@ -364,6 +369,10 @@ svg circle {
 .site-content .section {
   padding: 30px 0;
 }
+/*.site-content .section:after {
+  content: '';
+  clear: both;
+}*/
 
 .site-content .section-title {
   text-transform: uppercase;
@@ -488,7 +497,7 @@ svg circle {
   position: relative;
   /*display: none;*/
   clear: both;
-  margin: 60px 0 0;
+  margin: 200px 0 0;
   background: #464646;
   color: #fff;
   padding: 40px 0;
