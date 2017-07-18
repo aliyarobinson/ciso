@@ -96,7 +96,7 @@ img {
 }
 
 svg {
-  height: 100%;
+  height: 80%;
   position: absolute;
   transition: 1s;
   max-height: 3500px;
@@ -271,12 +271,11 @@ svg circle {
   bottom: 20px;
   width: 100%;
   text-align: center;
-  /*font-size: 30px;*/
-  color: #badbad;
+  color: #fff;
   border: none;
   outline-color: transparent;
   z-index: 10;
-  font: 30px 'Playfair Display', 'Times New Roman', serif;
+  font: 40px 'Playfair Display', 'Times New Roman', serif;
   transition: 800ms;
 }
 
