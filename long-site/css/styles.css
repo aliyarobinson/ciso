@@ -212,9 +212,12 @@ svg circle {
 }
 
 #logo-icon { 
-  stroke: #badbad;
-  stroke-width: 1px;
-  fill: #badbad;
+  /*stroke: #badbad;*/
+  stroke: #fff;
+  stroke-width: 2px;
+  /*fill: #badbad;*/
+  fill: #fff;
+  fill-opacity: 0.7;
   stroke-dasharray: 9000;
   stroke-dashoffset: 9000;
   webkit-animation: dash 20s linear forwards;
@@ -223,7 +226,9 @@ svg circle {
 }
 
 #full-title { 
-  fill: #badbad;
+  /*fill: #badbad;*/
+  fill: #ffffff;
+  fill-opacity: 1;
 }
 
 #full-title > * {
