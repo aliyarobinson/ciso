@@ -20,6 +20,18 @@ var CISO = CISO || {};
       sectionScrolling();
       stickyNav();
 
+      window.onhashchange = function(e) {
+        e.preventDefault();
+
+        var thisHash = location.hash;
+        CISO.scrollTo(thisHash);
+
+        siteHeader.find('a[href="'+thisHash+'"]').closest('li').siblings('li').removeClass('active');
+        siteHeader.find('a[href="'+thisHash+'"]').closest('li').addClass('active');
+
+
+      };
+
       // $("ul.news-feed").liScroll();
 
       /**************************************/
@@ -31,30 +43,6 @@ var CISO = CISO || {};
         bkgdImgs.delay(1500).addClass('small');
       });
 
-
-      /**************************************/
-      /*   Site Nav button animation on click
-      /***************************************************/
-      // $('.site-nav a').on( CISO.clickHandler , function(e){
-      //   e.preventDefault();
-      //   var thisElem = $(this).attr('href');
-      //   console.log('thisElem: ', thisElem);
-      //   CISO.scrollTo(thisElem, 150);
-      // }); 
-
-      /*$( window ).scroll(function() {
-        $('html, body').stop(); // stops scrollToTop when user is scrolling
-        var pagePosY = $(window).scrollTop();
-        if (pagePosY >= 150){
-          siteHeader.addClass('small');
-          bkgdImgs.delay(1500).addClass('small');
-        } else {
-          // CBCL.categoryNav.removeClass('fixed');
-        }
-      });*/
-
-
-
       function stickyNav() {
         var body = $('body'),
             nav = $('.site-nav > ul'),
@@ -64,37 +52,13 @@ var CISO = CISO || {};
         $win.scroll(function() {
 
           if ($(this).scrollTop() >= headerOffset) {
+            if ( !intro.hasClass('remove') ){
+              intro.addClass('remove');
+            }
             siteHeader.addClass('reveal');
             bkgdImgs.delay(1500).addClass('small');
-            // body.addClass('sticky-nav-engaged');
-            // nav.addClass('sticky');
-
-          } else {
-
-            // body.removeClass('sticky-nav-engaged');
-            // nav.removeClass('sticky');
-
           }
         });
-      }
-
-      function scrollTo(id, opts) {
-
-        var nav = $('.site-nav > ul'),
-            navOffset = 150,
-            targetOffset,
-            defaults = {
-              addedOffset: 0,
-              speed: 500
-            }
-            opts = $.extend({}, defaults, opts);
-
-        targetOffset = navOffset + opts.addedOffset;
-
-        $('html,body').animate({
-          scrollTop: $(id).offset().top - targetOffset
-        }, opts.speed);
-
       }
 
       function sectionScrolling() {
@@ -116,10 +80,15 @@ var CISO = CISO || {};
         navLink.on('click', function(){
 
           var hash = $(this).attr('href');
+          var thisLink = $(this).closest('li');
 
           console.log('hash: ', hash);
 
-          scrollTo(hash);
+          location.hash = hash;
+
+          CISO.scrollTo(hash);
+          thisLink.siblings('li').removeClass('active');
+          thisLink.addClass('active');
 
           if(nav.hasClass('active')) {
             nav.removeClass('active');
@@ -129,31 +98,6 @@ var CISO = CISO || {};
           return false;
 
         });
-
-        // page scroll position detection
-        /*$win.on('scroll resize', function() {
-
-          var currentPosition = $(this).scrollTop();
-
-          navLink.removeClass('active');
-
-          section.removeClass('active').each(function() {
-
-            var top = $(this).offset().top - navOffset, // height of sticky nav
-                bottom = top + $(this).outerHeight();
-
-            if(currentPosition >= top && currentPosition < bottom) {
-
-              var link = $('a[href="#' + this.id + '"]');
-              link.addClass('active');
-              $(this).addClass('active');
-
-              var sectionCount = $(this).attr('data-count');
-
-            }
-
-          });
-        });*/
 
       }
 
@@ -169,17 +113,28 @@ var CISO = CISO || {};
 
       }
 
-    }
+    },
+
+    scrollTo: function(id, opts) {
+
+        var nav = $('.site-nav > ul'),
+            navOffset = 150,
+            targetOffset,
+            defaults = {
+              addedOffset: 0,
+              speed: 500
+            }
+            opts = $.extend({}, defaults, opts);
+
+        targetOffset = navOffset + opts.addedOffset;
+
+        $('html,body').animate({
+          scrollTop: $(id).offset().top - targetOffset
+        }, opts.speed);
+
+      }
 
 
-
-    /*,scrollTo: function(elem) {
-
-      console.log('************** scrollTop fired *****************');
-      $('html,body').animate({
-          scrollTop: $(elem).offset().top
-      }, 1000);
-    }*/
   };
 })(jQuery); // end SEF
 
