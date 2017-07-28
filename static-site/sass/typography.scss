@@ -1,0 +1,39 @@
+/*
+
+  Fonts
+
+*/
+
+@include font-face('copperplate', '../fonts/copperplate_bold', 800, 'normal');
+@include font-face('copperplate', '../fonts/copperplate_light', 100, 'normal');
+@include font-face('raleway', '../fonts/Raleway-Light', 100, 'normal');
+@include font-face('raleway', '../fonts/Raleway-Regular', 400, 'normal');
+@include font-face('raleway', '../fonts/Raleway-Bold', 800, 'normal');
+
+// @include font-face('fontawesome', '../fonts/fontawesome-webfont');
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'copperplate', 'times new roman', serif;
+}
+
+strong {
+  font-weight: bold;
+  font-size: 22px;
+  color: #000;
+}
+
+p {
+  margin: 20px 0;
+  line-height: 28px;
+  letter-spacing: 0.26px;
+  font-size: $font-size;
+}
+
+p:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
