@@ -26,6 +26,7 @@ html {
 body {
   font: 400 16px 'raleway', arial, sans-serif;
   color: $font-color;
+  background: url(../img/bkgd-lt.jpg) no-repeat center -100px;
   @include css3(transition, 500ms);
   
   &.in-transition {
@@ -304,7 +305,7 @@ img {
   &.active a {
       color: $site-green;
   }
-  
+
 }
 
 .site-nav li:first-child {
