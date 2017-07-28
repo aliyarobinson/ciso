@@ -26,10 +26,10 @@ html {
 body {
   font: 400 16px 'raleway', arial, sans-serif;
   color: $font-color;
-  transition: 500ms;
+  @include css3(transition, 500ms);
   
   &.in-transition {
-    transition: transform 900ms ease;
+    @include css3(transition, transform 900ms ease);
   }
 }
 
@@ -175,7 +175,6 @@ img {
 
 *******************************/
 .site-header {
-  padding: 20px 0 0;
   width: 100%;
   position: fixed;
   z-index: 5;
@@ -188,14 +187,35 @@ img {
   > * {
     transition: 600ms;
   }
+
+  .wrapper {
+    height: 100%;
+  }
 }
 
 .logo-wrapper {
   max-width: 100px;
-  float: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 
   a {
     display: inline-block;
+  }
+}
+
+.login {
+  background: $site-green;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -262,7 +282,7 @@ img {
 .site-nav {
   float: right;
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   right: 0;
 }
 
@@ -298,6 +318,47 @@ img {
 }
 
 
+/*******************************
+
+  Mobile Nav Styles
+
+*******************************/
+
+.site-header.mobile {
+
+  .site-nav {
+    position: fixed;
+    bottom: initial;
+    top: 0;
+    z-index: 10;
+    background: #333;
+    height: 100%;
+    padding: 20px 40px 0 50px;
+    // box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
+    transform: translateX(100%);
+
+    ul {
+      margin: 90px;
+
+      li {
+        float: none;
+
+        &:first-child {
+          margin: none;
+        }
+      }
+    }
+  }
+
+  &.active{
+
+    .site-nav {
+      box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
+      transform: translateX(0%);
+    }
+
+  }
+}
 
 
 /*******************************
@@ -312,6 +373,7 @@ img {
   position: relative;
   top: 80px;
   margin: 30px 0;
+  padding: 0 0 100px;
 }
 
 
@@ -360,6 +422,10 @@ img {
       height: 40px;
       width: 40px;
 
+      &:hover {
+        background: $site-green;
+      }
+
       svg {
         width: 80%;
         position: relative;
@@ -372,6 +438,10 @@ img {
   .btn.btn-dark {
     padding: 20px 0;
     width: 100%;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .small-copy {
@@ -398,13 +468,14 @@ img {
 .site-footer {
   background: $site-gray;
   height: 80px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   color: #fff;
   font-size: 12px;
   letter-spacing: 0.4px;
   line-height: 16px;
+  z-index: 2;
 
   .wrapper {
     height: 100%;
