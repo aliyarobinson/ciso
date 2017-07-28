@@ -349,8 +349,8 @@ img {
   padding: 5px 0; }
   .site-nav li a {
     font: 100 16px 'copperplate', 'times new roman', serif; }
-    .site-nav li a:hover {
-      color: #badbad; }
+  .site-nav li:hover a, .site-nav li.active a {
+    color: #badbad; }
 
 .site-nav li:first-child {
   margin: 0; }

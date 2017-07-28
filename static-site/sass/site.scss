@@ -297,13 +297,14 @@ img {
   padding: 5px 0;
 
   a {
-
     font: 100 16px 'copperplate', 'times new roman', serif;
-
-    &:hover {
-      color: $site-green;
-    }
   }
+
+  &:hover a ,
+  &.active a {
+      color: $site-green;
+  }
+  
 }
 
 .site-nav li:first-child {
