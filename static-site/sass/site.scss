@@ -123,6 +123,23 @@ img {
 
 }
 
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid $site-gray;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $site-gray;
+}
+
+
 .responsive-embed {
     position: relative;
     padding-bottom: 56.25%;
@@ -166,6 +183,39 @@ img {
 .block-4-wide {
   width: 100%;
   max-width: $wrapper-width;
+}
+
+dt {
+  font: 20px 'copperplate_light', 'times new roman', serif;
+  border: 1px solid $site-gray;
+  border-style: none none solid;
+  margin: 0 0 5px;
+  cursor: pointer;
+
+  .arrow {
+    float: right;
+    margin: 8px;
+  }
+}
+
+dd {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 800ms;
+
+  ul {
+    margin: 10px 0;
+
+    li {
+      margin: 0 0 10px;
+    }
+  }
+}
+
+dt.active + dd {
+  max-height: 1000px;
+  opacity: 1;
 }
 
 
