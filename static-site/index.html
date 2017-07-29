@@ -26,6 +26,11 @@
           <img src="img/full-logo-lt.svg" alt="logo">
         </a>
       </h1>
+      <button class="menu-btn">
+        <span class="menu-nav-btn__bar"></span>
+        <span class="menu-nav-btn__bar"></span>
+        <span class="menu-nav-btn__bar"></span>
+      </button>
       <nav class="site-nav">
         <ul>
           <li><a href="about.html">about</a></li>
@@ -92,5 +97,26 @@
     ga('send', 'pageview');*/
   </script>
   <!-- <script src="js/script.min.js"></script> -->
+  <script src="js/jquery_2_2.js"></script>
+  <script src="js/mousewheel.js"></script>
+  <script src="js/custom_scrollbar.js"></script>
+  <script>
+    (function($){
+
+      $('.menu-btn').on('click', function(e){
+        $(this).toggleClass('active');
+        $('.site-header').toggleClass('active');
+
+      });
+
+      $('dt').on('click', function(e){
+        // $(this).closest('dl').find('.active').toggleClass('active');
+        $(this).toggleClass('active');
+      });
+
+      $(".news-list .news-content").mCustomScrollbar();
+
+    })(jQuery);
+  </script>
 
 </body>

@@ -12,6 +12,19 @@ var CISO = CISO || {};
     init: function () {
       console.log('init');
 
+      $('.menu-btn').on('click', function(e){
+        $(this).toggleClass('active');
+        $('.site-header').toggleClass('active');
+
+      });
+
+      $('dt').on('click', function(e){
+        // $(this).closest('dl').find('.active').toggleClass('active');
+        $(this).toggleClass('active');
+      });
+
+      $(".news-list .news-content").mCustomScrollbar();
+
       /**************************************/
       /*   Navigation link click
       /***************************************************/
