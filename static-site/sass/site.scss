@@ -584,6 +584,149 @@ dt.active + dd.news-list .news-content {
   overflow: hidden;
 }
 
+.homepage {
+
+  .site-header {
+      left: 100%;
+      opacity: 0;
+
+      .wrapper {
+        height: 100%;
+      }
+  }
+
+  .enter {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline-color: transparent;
+    z-index: 200;
+    font: 40px 'copperplate_light', 'Times New Roman', serif;
+    transition: 800ms;
+  }
+
+  .intro {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    background-image: url('../img/background-map-dark-1.png');
+    position: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 500;
+    top: 0;
+    left: 0;
+    -webkit-transition-delay: 1500ms;
+    -webkit-transition: 600ms;
+
+    .wrapper {
+      height: 100%;
+    }
+
+    a {
+      pointer-events: none;
+    }
+
+    svg {
+      height: 80%;
+      position: absolute;
+      transition: 1s;
+      max-height: 3500px;
+      transform: translateX(-50%);
+      left: 50%;
+      fill-opacity: 0.4;
+      width: 100%;
+    }
+
+    #logo-icon { 
+      stroke: #fff;
+      stroke-width: 2px;
+      fill: #fff;
+      fill-opacity: 0.7;
+      stroke-dasharray: 9000;
+      stroke-dashoffset: 9000;
+      webkit-animation: dash 20s linear forwards;
+      ms-animation: dash 20s linear forwards;
+      animation: dash 20s linear forwards;
+    }
+
+    #full-title { 
+      fill: #ffffff;
+      fill-opacity: 1;
+    }
+
+    #full-title > * {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+
+    #word1 {
+      animation: fadeInDown 1200ms .4s ease-out forwards;
+    }
+
+    #word2 {
+      animation: fadeInDown 1000ms .8s ease-out forwards;
+    }
+
+    #word3 {
+      animation: fadeInDown 800ms 1.2s ease-out forwards;
+    }
+
+  }
+
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+
+
+
+
+
+
+
+
+
+  .site-header.reveal {
+    left: 0;
+    opacity: 1;
+    z-index: 600;
+  }
+
+  .site-header.small .intro-logo {
+    transform: none;
+      top: 20px;
+      left: 20px;
+  }
+
+  .site-header.small .enter {
+    color: transparent;
+    pointer-events: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .site-header.small .intro a {
+    pointer-events: auto;
+  }
+
+  .background-img.small > *:last-child {
+    opacity: 0;
+    -webkit-transition-delay: 1200ms;
+  }
+
+  .intro.remove {
+    top: 100%;
+    height: 0;
+    opacity: 0;
+  }
+} 
+
 @media screen and (max-width: 1024px) {
   .site-footer .favorites .block {
     width: 100%;

@@ -3,8 +3,9 @@
 var CISO = CISO || {};
 
 (function($){
-  var siteHeader = $('.site-header');
-  var bkgdImgs = $('.background-img');
+  var siteHeader = $('.homepage .site-header');
+  var bkgdImgs = $('.homepage .background-img');
+  var intro = $('.homepage .intro');
 
   CISO = { 
     clickHandler: ('ontouchstart' in document.documentElement ? "touchstart" : "click"),
@@ -26,23 +27,17 @@ var CISO = CISO || {};
       $(".news-list .news-content").mCustomScrollbar();
 
       /**************************************/
-      /*   Navigation link click
+      /*   Intro Enter click
       /***************************************************/
-      $(document).on( CISO.clickHandler , '.enter', function(e) {
-        console.log('small'); 
-        console.log('bkgdImgs: ', bkgdImgs); 
-        siteHeader.addClass('small');
-        bkgdImgs.addClass('small');
-        bkgdImgs.find('.img').eq(1).fadeOut(800).addClass('faded');
+
+      $(document).on( CISO.clickHandler , 'button.enter', function(e) {
+        console.log('enter click');
+        siteHeader.addClass('reveal');
+        intro.addClass('remove');
+        location.path = 'about.html'
+        // bkgdImgs.delay(1500).addClass('small');
       });
 
-
-      /**************************************/
-      /*   Site Nav button animation on click
-      /***************************************************/
-      $('.site-nav-btn').on( CISO.clickHandler , function(){
-
-      }); 
     }
   };
 })(jQuery); // end SEF
