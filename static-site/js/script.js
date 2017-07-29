@@ -34,7 +34,9 @@ var CISO = CISO || {};
         console.log('enter click');
         siteHeader.addClass('reveal');
         intro.addClass('remove');
-        location.path = 'about.html'
+        window.setTimeout(function(){
+          location.pathname = 'aliyayrobinson/design-assets/chaka/ciso_website/static-site/' + 'about.html';
+        }, 1000);
         // bkgdImgs.delay(1500).addClass('small');
       });
 
