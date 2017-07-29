@@ -651,9 +651,9 @@ dt.active + dd.news-list .news-content {
     fill-opacity: 0.7;
     stroke-dasharray: 9000;
     stroke-dashoffset: 9000;
-    webkit-animation: dash 20s linear forwards;
-    ms-animation: dash 20s linear forwards;
-    animation: dash 20s linear forwards; }
+    webkit-animation: dash 2s linear forwards;
+    ms-animation: dash 2s linear forwards;
+    animation: dash 2s linear forwards; }
   .homepage .intro #full-title {
     fill: #ffffff;
     fill-opacity: 1; }
@@ -693,6 +693,19 @@ dt.active + dd.news-list .news-content {
   height: 0;
   opacity: 0; }
 
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes filling {
+  to {
+    opacity: 1; } }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: none; } }
 @media screen and (max-width: 1024px) {
   .site-footer .favorites .block {
     width: 100%; } }
