@@ -440,6 +440,11 @@ dt.active + dd {
   float: left;
 }
 
+dt.active + dd.news-list .news-content {
+  height: 100%;
+  max-height: 260px;
+}
+
 /*******************************
 
   Sidebar Styles
