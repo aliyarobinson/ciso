@@ -38,7 +38,7 @@ body {
 *:after,
 *:before {
   box-sizing: border-box;
-  transition: 500ms;
+  @include css3(transition, 500ms);
 }
 
 .wrapper {
@@ -202,7 +202,7 @@ dd {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: 800ms;
+  @include css3(transition, 800ms);
 
   ul {
     margin: 10px 0;
@@ -233,10 +233,10 @@ dt.active + dd {
   left: 0;
   height: 80px;
   background: $site-gray;
-  transition: 600ms;
+  @include css3(transition, 600ms);
 
   > * {
-    transition: 600ms;
+    @include css3(transition, 600ms);
   }
 
   .wrapper {
@@ -248,7 +248,7 @@ dt.active + dd {
   max-width: 100px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  @include css3(transform, translateY(-50%));
 
   a {
     display: inline-block;
@@ -278,7 +278,7 @@ dt.active + dd {
   right: 40%;
   top: 50%;
   z-index: 100;
-  transform: translate(-50%,-50%);
+  @include css3(transform, translate(-50%,-50%));
 }
 
 .menu-nav-btn__bar {
@@ -292,8 +292,7 @@ dt.active + dd {
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00767676', endColorstr='#d4767676',GradientType=1 );
   margin-top: 5px;
   display: inherit;
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  @include css3(transition, 400ms);
   position: absolute;
   pointer-events: none;
   opacity: 1;
@@ -313,9 +312,8 @@ dt.active + dd {
 }
 
 .menu-btn.active .menu-nav-btn__bar {
-  transform: translateY(3px) rotate(-45deg);
-  transform-origin: center center;
-  -webkit-transform-origin: center center;
+  @include css3(transform, translateY(3px) rotate(-45deg));
+  @include css3(transform-origin, center center);
   margin-top: 0px;
   background: #fff;
   // background: -moz-linear-gradient(left,  rgba(118,118,118,0) 0%, rgba(118,118,118,0.83) 50%, rgba(118,118,118,0) 100%);
@@ -325,7 +323,7 @@ dt.active + dd {
 }
 
 .menu-btn.active .menu-nav-btn__bar:first-child {
-  transform: translateY(3px) rotate(45deg);
+  @include css3(transform, translateY(3px) rotate(45deg));
 }
 
 /*******************************
@@ -391,7 +389,7 @@ dt.active + dd {
     height: 100%;
     padding: 20px 40px 0 50px;
     // box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
-    transform: translateX(100%);
+    @include css3(transform, translateX(100%));
 
     ul {
       margin: 90px;
@@ -410,7 +408,7 @@ dt.active + dd {
 
     .site-nav {
       box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
-      transform: translateX(0%);
+      @include css3(transform, translateX(0%));
     }
 
   }
@@ -546,7 +544,7 @@ dt.active + dd.news-list .news-content {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
+    @include css3(transform, translateY(-50%));
 
     a:hover {
       color: $site-green;
@@ -569,7 +567,7 @@ dt.active + dd.news-list .news-content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  @include css3(transform, translate(-50%,-50%));
 }
 
 
@@ -620,7 +618,7 @@ dt.active + dd.news-list .news-content {
       position: absolute;
       right: 20px;
       top: 50%;
-      transform: translateY(-50%);
+      @include css3(transform, translateY(-50%));
     }
 
     .sidebar-mod:last-child > *:first-child {
@@ -646,7 +644,7 @@ dt.active + dd.news-list .news-content {
       width: 100%;
       padding: 20px 40px 0 50px;
       // box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
-      transform: translateX(100%);
+      @include css3(transform, translateX(100%));
 
       ul {
 
@@ -679,7 +677,7 @@ dt.active + dd.news-list .news-content {
 
       .site-nav {
         box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
-        transform: translateX(0%);
+        @include css3(transform, translateX(0%));
       }
 
     }
