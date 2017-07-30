@@ -673,15 +673,15 @@ dt.active + dd.news-list .news-content {
       animation: fadeIn 800ms 1s ease-out forwards;
     }
 
-    #word1 {
+    #word1, #comprehensive {
       animation: fadeInDown 1200ms .4s ease-out forwards;
     }
 
-    #word2 {
+    #word2, #immigration {
       animation: fadeInDown 1000ms .8s ease-out forwards;
     }
 
-    #word3 {
+    #word3, #solutions {
       animation: fadeInDown 800ms 1.2s ease-out forwards;
     }
 
