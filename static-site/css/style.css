@@ -648,18 +648,20 @@ dt.active + dd.news-list .news-content {
     stroke: #fff;
     stroke-width: 2px;
     fill: #fff;
-    fill-opacity: 0.7;
-    stroke-dasharray: 9000;
-    stroke-dashoffset: 9000;
-    webkit-animation: dash 2s linear forwards;
-    ms-animation: dash 2s linear forwards;
-    animation: dash 2s linear forwards; }
+    fill-opacity: 0.7; }
   .homepage .intro #full-title {
     fill: #ffffff;
     fill-opacity: 1; }
-  .homepage .intro #full-title > * {
+  .homepage .intro #full-title > *,
+  .homepage .intro #logo-icon > * {
     opacity: 0;
     transform: translate3d(0, -100%, 0); }
+  .homepage .intro #logo_c {
+    animation: fadeIn 1200ms .2s ease-out forwards; }
+  .homepage .intro #logo_s {
+    animation: fadeIn 1000ms .6s ease-out forwards; }
+  .homepage .intro #logo_i {
+    animation: fadeIn 800ms 1s ease-out forwards; }
   .homepage .intro #word1 {
     animation: fadeInDown 1200ms .4s ease-out forwards; }
   .homepage .intro #word2 {
@@ -697,6 +699,11 @@ dt.active + dd.news-list .news-content {
   to {
     stroke-dashoffset: 0; } }
 @keyframes filling {
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
   to {
     opacity: 1; } }
 @keyframes fadeInDown {
