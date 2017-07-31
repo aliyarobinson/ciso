@@ -77,6 +77,7 @@ var CISO = CISO || {};
       $(window).load(function() {
           // loader.delay( 1200 ).addClass('collapsed');
           loader.addClass('collapsed');
+          intro.delay(800).addClass('animate');
       });
 
       $('.menu-btn').on('click', function(e){
@@ -98,10 +99,9 @@ var CISO = CISO || {};
         console.log('enter click');
         siteHeader.addClass('reveal');
         intro.addClass('remove');
-        window.setTimeout(function(){
-          location.pathname = 'aliyayrobinson/design-assets/chaka/ciso_website/static-site/' + 'about.html';
-        }, 1000);
-        // bkgdImgs.delay(1500).addClass('small');
+        // window.setTimeout(function(){
+        //   location.pathname = 'aliyayrobinson/design-assets/chaka/ciso_website/static-site/' + 'about.html';
+        // }, 1000);
       });
 
 

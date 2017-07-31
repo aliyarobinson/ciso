@@ -49,6 +49,14 @@ body {
   overflow: hidden;
 }
 
+.alt-title {
+  background: $site-trans-gray;
+  font: 20px 'raleway', arial, sans-serif;
+  color: #fff;
+  padding: 10px;
+  margin: 0 0 20px;
+}
+
 a,button {
   outline-color: transparent;
   outline: none;
@@ -463,7 +471,7 @@ dt.active + dd.news-list .news-content {
   margin: 0 0 30px;
 
   &:last-child {
-    border: solid 6px rgba(0,0,0,0.8);
+    border: solid 6px $site-trans-gray;
     border-style: solid none;
     background: rgba(255,255,255,0.8);
     padding: 20px 10px;
@@ -489,7 +497,7 @@ dt.active + dd.news-list .news-content {
         width: 80%;
         position: relative;
         top: 5px;
-        left: 1px;
+        left: 0;
       }
     }
   }
@@ -497,6 +505,7 @@ dt.active + dd.news-list .news-content {
   .btn.btn-dark {
     padding: 20px 0;
     width: 100%;
+    background: $site-trans-gray;
 
     &:hover {
       text-decoration: underline;
@@ -512,10 +521,46 @@ dt.active + dd.news-list .news-content {
 
 /*******************************
 
-  Homepage Styles
+  Assesment Styles
 
 *******************************/
 
+.quiz-quest {
+  font-size: 24px;
+}
+
+.quiz-opts {
+  text-align: right;
+  margin: 30px 0 0;
+  li {
+    display: inline-block;
+  }
+  button {
+    width: 80px;
+    color: #fff;
+    padding: 10px 0;
+    background: #ccc;
+    margin: 0 0 0 20px;
+    font:100 18px 'raleway', arial, sans-serif;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.single-opt,
+    &.multi-opt {
+      background: $site-trans-gray;
+    }
+
+    &.yes-opt {
+      background: $site-green;
+    }
+
+    &.no-opt {
+      background: $site-red;
+    }
+  }
+}
 
 
 /*******************************
@@ -584,7 +629,7 @@ dt.active + dd.news-list .news-content {
   z-index: 800;
   color: #fff;
   text-align: center;
-  transition: 500ms;
+  @include css3(transition, 500ms);
   top: 0;
   left: 0;
 }
@@ -617,13 +662,13 @@ dt.active + dd.news-list .news-content {
     outline-color: transparent;
     z-index: 200;
     font: 40px 'copperplate_light', 'Times New Roman', serif;
-    transition: 800ms;
+    @include css3(transition, 800ms);
   }
 
   .intro {
     width: 100%;
     height: 100%;
-    transition: 1s;
+    @include css3(transition, 1s);
     background-image: url('../img/background-map-dark-1.png');
     position: fixed;
     background-position: center center;
@@ -632,8 +677,8 @@ dt.active + dd.news-list .news-content {
     z-index: 500;
     top: 0;
     left: 0;
-    -webkit-transition-delay: 1500ms;
-    -webkit-transition: 600ms;
+    @include css3(transition-delay, 1500ms);
+    @include css3(transition, 600ms);
 
     .wrapper {
       height: 100%;
@@ -646,9 +691,9 @@ dt.active + dd.news-list .news-content {
     svg {
       height: 40%;
       position: absolute;
-      transition: 1s;
+      @include css3(transition, 1s);
       max-height: 3500px;
-      transform: translate(-50%,-50%);
+      @include css3(transform, translate(-50%,-50%));
       left: 50%;
       fill-opacity: 0.4;
       width: 100%;
@@ -670,7 +715,7 @@ dt.active + dd.news-list .news-content {
 
     #full-title > * {
       opacity: 0;
-      transform: translateY(-100%);
+      @include css3(transform, translateY(-100%));
       // transform: translate3d(0, -100%, 0);
     }
 
@@ -678,40 +723,36 @@ dt.active + dd.news-list .news-content {
       opacity: 0;
     }
 
-    #logo-icon > #logo_globe {
-      // animation-delay: 600ms;
-      animation: fadeIn 2000ms 1s ease-out forwards;
-    }
+    &.animate {
+      #logo-icon > #logo_globe {
+        animation: fadeIn 2000ms 1s ease-out forwards;
+      }
 
-    #logo_c {
-      // animation-delay: 600ms;
-      animation: fadeIn 2000ms .8s ease-out forwards;
-    }
+      #logo_c {
+        animation: fadeIn 2000ms .8s ease-out forwards;
+      }
 
-    #logo_i {
-      // animation-delay: 600ms;
-      animation: fadeIn 800ms 1.5s ease-out forwards;
-    }
+      #logo_i {
+        animation: fadeIn 800ms 1.5s ease-out forwards;
+      }
 
-    #logo_s {
-      // animation-delay: 600ms;
-      animation: fadeIn 2000ms 2s ease-out forwards;
-    }
+      #logo_s {
+        animation: fadeIn 2000ms 2s ease-out forwards;
+      }
 
-    #word1, #comprehensive {
-      // animation-delay: 600ms;
-      animation: fadeInDown 1200ms 2.5s ease-out forwards;
-    }
+      #word1, #comprehensive {
+        animation: fadeInDown 1200ms 2.5s ease-out forwards;
+      }
 
-    #word2, #immigration {
-      // animation-delay: 600ms;
-      animation: fadeInDown 1000ms 3s ease-out forwards;
-    }
+      #word2, #immigration {
+        animation: fadeInDown 1000ms 3s ease-out forwards;
+      }
 
-    #word3, #solutions {
-      // animation-delay: 600ms;
-      animation: fadeInDown 800ms 3.5s ease-out forwards;
+      #word3, #solutions {
+        animation: fadeInDown 800ms 3.5s ease-out forwards;
+      }
     }
+    
 
   }
 
@@ -736,7 +777,7 @@ dt.active + dd.news-list .news-content {
   }
 
   .site-header.small .intro-logo {
-    transform: none;
+    @include css3(transform, none);
       top: 20px;
       left: 20px;
   }
@@ -754,7 +795,7 @@ dt.active + dd.news-list .news-content {
 
   .background-img.small > *:last-child {
     opacity: 0;
-    -webkit-transition-delay: 1200ms;
+    @include css3(transition-delay, 1200ms);
   }
 
   .intro.remove {
@@ -764,17 +805,36 @@ dt.active + dd.news-list .news-content {
   }
 } 
 
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-ms-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-@keyframes filling {
-  to {
-    opacity: 1;
-  }
-}
+// @keyframes filling {
+//   to {
+//     opacity: 1;
+//   }
+// }
+
 
 @keyframes fadeIn {
   from {
@@ -786,16 +846,81 @@ dt.active + dd.news-list .news-content {
   }
 }
 
-@keyframes fadeInDown {
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-100%);
-    // transform: translate3d(0, -100%, 0);
   }
 
   to {
     opacity: 1;
-    transform: none;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    @include css3(transform, translateY(-100%));
+  }
+
+  to {
+    opacity: 1;
+    @include css3(transform, none);
+  }
+}
+
+@-moz-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    @include css3(transform, translateY(-100%));
+  }
+
+  to {
+    opacity: 1;
+    @include css3(transform, none);
+  }
+}
+
+@-ms-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    @include css3(transform, translateY(-100%));
+  }
+
+  to {
+    opacity: 1;
+    @include css3(transform, none);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    @include css3(transform, translateY(-100%));
+  }
+
+  to {
+    opacity: 1;
+    @include css3(transform, none);
   }
 }
 
@@ -917,6 +1042,18 @@ dt.active + dd.news-list .news-content {
     width: 100%;
     max-width: none;
   }
+
+  .sidebar {
+    .sidebar-mod {
+      &:last-child {
+        & > *:first-child {
+        font-size: 16px;
+        width: 70%;
+        }
+      }
+    }
+  }
+
 
 }
 
