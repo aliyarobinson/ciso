@@ -396,7 +396,6 @@ dt.active + dd {
     background: #333;
     height: 100%;
     padding: 20px 40px 0 50px;
-    // box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.67);
     @include css3(transform, translateX(100%));
 
     ul {
@@ -724,20 +723,22 @@ dt.active + dd.news-list .news-content {
     }
 
     &.animate {
-      #logo-icon > #logo_globe {
-        animation: fadeIn 2000ms 1s ease-out forwards;
-      }
+
 
       #logo_c {
-        animation: fadeIn 2000ms .8s ease-out forwards;
+        animation: fadeIn 2000ms 0.8s ease-out forwards;
       }
 
       #logo_i {
-        animation: fadeIn 800ms 1.5s ease-out forwards;
+        animation: fadeIn 2000ms 1.5s ease-out forwards;
+      }
+
+      #logo-icon > #logo_globe {
+        animation: fadeIn 2000ms 2s ease-out forwards;
       }
 
       #logo_s {
-        animation: fadeIn 2000ms 2s ease-out forwards;
+        animation: fadeIn 2000ms 2.5s ease-out forwards;
       }
 
       #word1, #comprehensive {

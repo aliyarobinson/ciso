@@ -734,14 +734,14 @@ dt.active + dd.news-list .news-content {
     transform: translateY(-100%); }
   .homepage .intro #logo-icon > * {
     opacity: 0; }
-  .homepage .intro.animate #logo-icon > #logo_globe {
-    animation: fadeIn 2000ms 1s ease-out forwards; }
   .homepage .intro.animate #logo_c {
-    animation: fadeIn 2000ms .8s ease-out forwards; }
+    animation: fadeIn 2000ms 0.8s ease-out forwards; }
   .homepage .intro.animate #logo_i {
-    animation: fadeIn 800ms 1.5s ease-out forwards; }
-  .homepage .intro.animate #logo_s {
+    animation: fadeIn 2000ms 1.5s ease-out forwards; }
+  .homepage .intro.animate #logo-icon > #logo_globe {
     animation: fadeIn 2000ms 2s ease-out forwards; }
+  .homepage .intro.animate #logo_s {
+    animation: fadeIn 2000ms 2.5s ease-out forwards; }
   .homepage .intro.animate #word1, .homepage .intro.animate #comprehensive {
     animation: fadeInDown 1200ms 2.5s ease-out forwards; }
   .homepage .intro.animate #word2, .homepage .intro.animate #immigration {
