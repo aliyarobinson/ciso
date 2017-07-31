@@ -1,0 +1,60 @@
+[
+  {
+    "qmID": "01",
+    "qmQuest": "",
+    "qmInfo": ["Find what immigration option may be available to you"],
+    "qmOpts": [
+        {"optTag":"Start", "optAns": 02, "optClass": "single-opt"}
+    ]
+  },
+  {
+    "qmID": "02",
+    "qmQuest": "Do you have a job opportunity in the U.S.?",
+    "qmInfo": [],
+    "qmOpts": [
+        {"optTag":"Yes", "optAns": 03, "optClass": "yes-opt"},
+        {"optTag":"No", "optAns": "??", "optClass": "no-opt"}
+    ]
+  },
+  {
+    "qmID": "03",
+    "qmQuest": "Already in U.S.?",
+    "qmInfo": [],
+    "qmOpts": [
+        {"optTag":"Yes", "optAns": 04, "optClass": "yes-opt"},
+        {"optTag":"No", "optAns": "??", "optClass": "no-opt"}
+    ]
+  },
+  {
+    "qmID": "04",
+    "qmQuest": "In legal status?",
+    "qmInfo": [],
+    "qmOpts": [
+        {"optTag":"Yes", "optAns": 05, "optClass": "yes-opt"},
+        {"optTag":"No", "optAns": "??", "optClass": "no-opt"}
+    ]
+  },
+  {
+    "qmID": "05",
+    "qmQuest": "Working on H1, L1, etc?",
+    "qmInfo": [],
+    "qmOpts": [
+        {"optTag":"Yes", "optAns": 05, "optClass": "yes-opt"},
+        {"optTag":"No", "optAns": "??", "optClass": "no-opt"}
+    ]
+  },
+  {
+    "qmID": "06",
+    "qmQuest": "What category?",
+    "qmInfo": ["You may start employment-based immigration process."],
+    "qmOpts": [
+        {"optTag":"EB-1: blah blah", "optAns": "??", "optClass": "multi-opt"},
+        {"optTag":"EB-2: blah blah", "optAns": "??", "optClass": "multi-opt"},
+        {"optTag":"EB-3: blah blah", "optAns": "??", "optClass": "multi-opt"},
+        {"optTag":"EB-4: blah blah", "optAns": "??", "optClass": "multi-opt"},
+        {"optTag":"EB-5: blah blah", "optAns": "??", "optClass": "multi-opt"},
+    ]
+  }
+
+
+]
