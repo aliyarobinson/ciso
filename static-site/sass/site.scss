@@ -576,6 +576,18 @@ dt.active + dd.news-list .news-content {
   Override & Responsive Styles
 
 *******************************/
+.loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #333;
+  z-index: 800;
+  color: #fff;
+  text-align: center;
+  transition: 500ms;
+  top: 0;
+  left: 0;
+}
 
 .collapsed {
   max-height: 0;
@@ -597,7 +609,7 @@ dt.active + dd.news-list .news-content {
 
   .enter {
     position: absolute;
-    bottom: 20px;
+    top: 75%;
     width: 100%;
     text-align: center;
     color: #fff;
@@ -632,14 +644,15 @@ dt.active + dd.news-list .news-content {
     }
 
     svg {
-      height: 80%;
+      height: 40%;
       position: absolute;
       transition: 1s;
       max-height: 3500px;
-      transform: translateX(-50%);
+      transform: translate(-50%,-50%);
       left: 50%;
       fill-opacity: 0.4;
       width: 100%;
+      top: 50%;
     }
 
     #logo-icon { 
@@ -655,34 +668,49 @@ dt.active + dd.news-list .news-content {
       fill-opacity: 1;
     }
 
-    #full-title > *,
+    #full-title > * {
+      opacity: 0;
+      transform: translateY(-100%);
+      // transform: translate3d(0, -100%, 0);
+    }
+
     #logo-icon > * {
       opacity: 0;
-      transform: translate3d(0, -100%, 0);
+    }
+
+    #logo-icon > #logo_globe {
+      // animation-delay: 600ms;
+      animation: fadeIn 2000ms 1s ease-out forwards;
     }
 
     #logo_c {
-      animation: fadeIn 1200ms .2s ease-out forwards;
-    }
-
-    #logo_s {
-      animation: fadeIn 1000ms .6s ease-out forwards;
+      // animation-delay: 600ms;
+      animation: fadeIn 2000ms .8s ease-out forwards;
     }
 
     #logo_i {
-      animation: fadeIn 800ms 1s ease-out forwards;
+      // animation-delay: 600ms;
+      animation: fadeIn 800ms 1.5s ease-out forwards;
+    }
+
+    #logo_s {
+      // animation-delay: 600ms;
+      animation: fadeIn 2000ms 2s ease-out forwards;
     }
 
     #word1, #comprehensive {
-      animation: fadeInDown 1200ms .4s ease-out forwards;
+      // animation-delay: 600ms;
+      animation: fadeInDown 1200ms 2.5s ease-out forwards;
     }
 
     #word2, #immigration {
-      animation: fadeInDown 1000ms .8s ease-out forwards;
+      // animation-delay: 600ms;
+      animation: fadeInDown 1000ms 3s ease-out forwards;
     }
 
     #word3, #solutions {
-      animation: fadeInDown 800ms 1.2s ease-out forwards;
+      // animation-delay: 600ms;
+      animation: fadeInDown 800ms 3.5s ease-out forwards;
     }
 
   }
@@ -761,7 +789,8 @@ dt.active + dd.news-list .news-content {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translateY(-100%);
+    // transform: translate3d(0, -100%, 0);
   }
 
   to {

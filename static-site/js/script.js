@@ -6,12 +6,18 @@ var CISO = CISO || {};
   var siteHeader = $('.homepage .site-header');
   var bkgdImgs = $('.homepage .background-img');
   var intro = $('.homepage .intro');
+  var loader = $('.loader');
 
   CISO = { 
     clickHandler: ('ontouchstart' in document.documentElement ? "touchstart" : "click"),
 
     init: function () {
       console.log('init');
+
+      $(window).load(function() {
+          // loader.delay( 1200 ).addClass('collapsed');
+          loader.addClass('collapsed');
+      });
 
       $('.menu-btn').on('click', function(e){
         $(this).toggleClass('active');

@@ -17,7 +17,31 @@
 	.st11{fill:url(#SVGID_11_);}
 	.st12{fill:url(#SVGID_12_);}
 </style>
-<g id="circle">
+<defs>
+
+  <filter id="sofGlow" height="300%" width="300%" x="-75%" y="-75%">
+    <!-- Thicken out the original shape -->
+    <feMorphology operator="dilate" radius="4" in="SourceAlpha" result="thicken" />
+
+    <!-- Use a gaussian blur to create the soft blurriness of the glow -->
+    <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
+
+    <!-- Change the colour -->
+    <!-- <feFlood flood-color="rgb(0,186,255)" result="glowColor" /> -->
+    <feFlood flood-color="rgb(255,255,255)" result="glowColor" />
+
+    <!-- Color in the glows -->
+    <feComposite in="glowColor" in2="blurred" operator="in" result="softGlow_colored" />
+
+    <!--  Layer the effects together -->
+    <feMerge>
+      <feMergeNode in="softGlow_colored"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+
+  </filter>
+</defs>
+<g id="circle" filter="url(#sofGlow)">
 	
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="50.4515" y1="330.5166" x2="163.3335" y2="150.7425" gradientTransform="matrix(0.9202 0.3915 -0.3915 0.9202 110.6509 -146.717)">
 		<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
@@ -183,7 +207,7 @@
 		c5.7-3.4,11-7.3,16-11.7c4.9-4.4,9.5-9.3,13.5-14.6c4-5.3,7.5-11,10.4-17.1c0.7-1.5,1.4-3,2.1-4.6c0.7-1.5,1.2-3.1,1.8-4.7
 		C211.5,147.7,211.9,146.1,212.4,144.5z"/>
 </g>
-<g id="swirls">
+<g id="swirls" filter="url(#sofGlow)">
 	
 		<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="22.8978" y1="251.0412" x2="186.8286" y2="223.6058" gradientTransform="matrix(0.9202 0.3915 -0.3915 0.9202 110.6509 -146.717)">
 		<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
