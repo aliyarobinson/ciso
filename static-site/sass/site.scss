@@ -553,6 +553,18 @@ dt.active {
   }
 }
 
+
+.news-block {
+  .news-date {
+    font-size: 12px;
+    background: $site-trans-gray;
+    color: $site-green;
+    padding: 10px;
+    margin: 5px 0;
+    max-width: 110px;
+  }
+}
+
 /*******************************
 
   Assesment Styles
@@ -676,6 +688,12 @@ dt.active {
 }
 
 
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background: #333;
+  width: 8px;
+  border-radius: 0;
+}
 
 .homepage {
 
