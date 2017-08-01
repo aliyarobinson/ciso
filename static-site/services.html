@@ -22,8 +22,8 @@
   <header class="site-header" role="banner">
     <div class="wrapper">
       <h1 class="logo-wrapper">
-        <a href="#">
-          <img src="img/full-logo-lt.svg" alt="logo">
+        <a href="index.html">
+          <img src="img/full-logo-002.svg" alt="logo">
         </a>
       </h1>
       <button class="menu-btn">
@@ -102,6 +102,11 @@
     
   </main>
   <footer class="site-footer">
+    <div class="news-ticker">
+      <ul>
+        <li>News feed info will appear here</li>
+      </ul>
+    </div>
     <div class="wrapper">
       <div class="footer-logo-wrapper">
         <img src="img/logo-icon.svg" alt="logo">
@@ -112,7 +117,7 @@
       </div>
       <div class="block block-2-wide">
         85 Broad Street, 28th, Floor New York, NY 10004<br/>
-        <a href="mailto:info@cisolaw.com">info@cisolaw.com</a> <a href="tel:+1 212 960 8611">+1 212 960 8611</a>
+        <a href="mailto:info@cisolaw.com">info@cisolaw.com</a> <a href="tel:1-212-960-8611">+1 212 960 8611</a>
       </div>
     </div>
     
@@ -130,23 +135,6 @@
   <script src="js/jquery_2_2.js"></script>
   <script src="js/mousewheel.js"></script>
   <script src="js/custom_scrollbar.js"></script>
-  <script>
-    (function($){
-
-      $('.menu-btn').on('click', function(e){
-        $(this).toggleClass('active');
-        $('.site-header').toggleClass('active');
-
-      });
-
-      $('dt').on('click', function(e){
-        // $(this).closest('dl').find('.active').toggleClass('active');
-        $(this).toggleClass('active');
-      });
-
-      $(".news-list .news-content").mCustomScrollbar();
-
-    })(jQuery);
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
