@@ -454,6 +454,12 @@ dt.active + dd.news-list .news-content {
   max-height: 260px;
 }
 
+dt.active {
+  .arrow {
+    @include css3(transform, rotate(180deg));
+  }
+}
+
 /*******************************
 
   Sidebar Styles
@@ -658,6 +664,7 @@ dt.active + dd.news-list .news-content {
     text-align: center;
     color: #fff;
     border: none;
+    margin: 0;
     outline-color: transparent;
     z-index: 200;
     font: 40px 'copperplate_light', 'Times New Roman', serif;
