@@ -683,7 +683,8 @@ dt.active .arrow {
   overflow: hidden; }
 
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
-.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger_onDrag .mCSB_dragger_bar {
   background: #333;
   width: 8px;
   border-radius: 0; }
